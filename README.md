@@ -26,34 +26,38 @@ To create similar mind maps using Graphviz, follow the steps below:
    ```bash
    sudo apt-get install graphviz
    pip install graphviz
+   ```   
 Example Script
 Below is an example script used to create a mind map:
 
 python
 Copy code
-from graphviz import Digraph
+   ```bash
+   from graphviz import Digraph
+   
+   # Create a new Digraph object
+   mindmap = Digraph(format='pdf')
+   
+   # Set global graph attributes for style and layout
+   mindmap.attr(rankdir='TB', size='16,9!', pad='1.5', splines='true')
+   mindmap.attr('graph', bgcolor='lightblue')
+   mindmap.attr('node', shape='ellipse', style='filled', color='lightblue', fontname='Arial', fontsize='22', margin='0.3')
+   mindmap.attr('edge', color='gray', penwidth='2')
+   
+   # Root node
+   mindmap.node('A', 'Your Central Idea', shape='ellipse', style='filled', color='orange', fontcolor='white', fontsize='28')
+   
+   # Add more nodes and edges
+   mindmap.node('B1', 'Main Idea 1', color='lightcoral')
+   mindmap.node('B2', 'Main Idea 2', color='lightseagreen')
+   
+   mindmap.edge('A', 'B1')
+   mindmap.edge('A', 'B2')
+   
+   # Render the mind map to a file
+   mindmap.render('output_filename')
+   ```
 
-# Create a new Digraph object
-mindmap = Digraph(format='pdf')
-
-# Set global graph attributes for style and layout
-mindmap.attr(rankdir='TB', size='16,9!', pad='1.5', splines='true')
-mindmap.attr('graph', bgcolor='lightblue')
-mindmap.attr('node', shape='ellipse', style='filled', color='lightblue', fontname='Arial', fontsize='22', margin='0.3')
-mindmap.attr('edge', color='gray', penwidth='2')
-
-# Root node
-mindmap.node('A', 'Your Central Idea', shape='ellipse', style='filled', color='orange', fontcolor='white', fontsize='28')
-
-# Add more nodes and edges
-mindmap.node('B1', 'Main Idea 1', color='lightcoral')
-mindmap.node('B2', 'Main Idea 2', color='lightseagreen')
-
-mindmap.edge('A', 'B1')
-mindmap.edge('A', 'B2')
-
-# Render the mind map to a file
-mindmap.render('output_filename')
 How to Use
 Clone the Repository:
 
