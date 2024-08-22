@@ -56,20 +56,20 @@ Below is an example script used to create a mind map:
    mindmap.render('output_filename')
    ```
 
-How to Use
+### How to Use
 Clone the Repository:
 
-bash
-Copy code
-git clone https://github.com/rksiitd1/graphviz.git
-cd graphviz
-Create Your Own Mind Map:
+   ```bash
+      git clone https://github.com/rksiitd1/graphviz.git
+      cd graphviz
+   ```
+### Create Your Own Mind Map:
 
 You can use the provided script as a template. Modify the node names, colors, and structure according to your needs. Once done, run the script to generate your mind map.
 
-bash
-Copy code
-python3 your_script.py
+      ```bash
+      python3 your_script.py
+      ```
 The output PDF file will be saved in the current directory.
 
 # Getting Help from ChatGPT
